@@ -1,7 +1,7 @@
 
 :root{
 
-    --primary: #A5C882;
+    --primary: #17a72c;
     --secondary:#D33F49;
     --light:#fff;
     --dark:#000;
@@ -14,7 +14,7 @@ body{
     font-family: 'Lato', sans-serif;
     margin: 0;
     height: 100vh;
-    background-color: var(--diabled);
+    background-color: #000;
 }
 
 *:first-letter {

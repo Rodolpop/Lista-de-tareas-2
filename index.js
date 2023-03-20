@@ -1,3 +1,4 @@
+
 //info date
 const dateNumber = document.getElementById('dateNumber');
 const dateText = document.getElementById('dateText');
@@ -6,12 +7,12 @@ const dateYear = document.getElementById('dateYear');
 
 // task container
 
-const taskContainer = document.getElementById('taskContainer');
+const tasksContainer = document.getElementById('tasksContainer');
 
 
 // function
 
-const setDate = () =>{  
+const setDate = () => {  
 
     const date = new Date();
     dateNumber.textContent = date.toLocaleDateString('es',{day:'numeric'});
@@ -30,9 +31,9 @@ const addNewTask = event => {
     if(!value) return;
     const task = document.createElement('div');
     task.classList.add('task', 'roundBorder');
-    task.addEventListener('click', changeTaskState);
+    task.addEventListener('click', changeTaskState)
     task.textContent = value;
-    taskContainer.prepend(task);
+    tasksContainer.prepend(task);
     event.target.reset();
 
 };
@@ -43,10 +44,9 @@ const changeTaskState = event => {
 };
 
 const order = () => {
-
     const done = [];
     const toDo = [];
-    taskContainer,childNodes.forEach( el => {
+    tasksContainer.childNodes.forEach( el => {
         el.classList.contains('done') ? done.push(el) : toDo.push(el)
     })
     return [...toDo, ...done];
@@ -54,9 +54,12 @@ const order = () => {
 }
 
 
-const renderOrdererTask = () => {
-    order().forEach( el => taskContainer.appendChild(el))
+const renderOrderedTasks = () => {
+    order().forEach(el => tasksContainer.appendChild(el))
 }
 
 
 setDate();
+
+
+
